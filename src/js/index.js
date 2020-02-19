@@ -11,6 +11,7 @@ const controlSearch = async () => {
 
     if(query) {
         state.search = new Search(query);
+        searchView.clearResults();
         await state.search.getResults();
         // console.log(state.search.result);
         searchView.renderResults(state.search.result);
